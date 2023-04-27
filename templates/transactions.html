@@ -17,22 +17,24 @@
                 <th>Transaction ID</th>
                 <th>Movie ID</th>
                 <th>Movie Title</th>
-                <th>User Account ID</th>
                 <th>User Name</th>
+                <th>Type</th>
                 <th>Date</th>
                 <th>Amount</th>
+                <th>Pay Method</th>
             </tr>
             </thead>
             <tbody>
             {% for transaction in transactions %}
             <tr>
-                <td>{{ transaction.id }}</td>
+                <td>{{ transaction.ID }}</td>
                 <td>{{ transaction.movieID }}</td>
-                <td><a href="/movie/{{ transaction.movieID }}">{{ transaction.movieName }}</a></td>
-                <td>{{ transaction.userID }}</td>
-                <td>{{ transaction.userName}}</td>
-                <td>{{ transaction.date }}</td>
-                <td>{{ transaction.amount }}</td>
+                <td><a href="/movie/{{ transaction.movieID }}">{{ transaction.Movie }}</a></td>
+                <td>{{ transaction.Customer}}</td>
+                <td>{{ transaction.Type }}</td>
+                <td>{{ transaction.Date }}</td>
+                <td>{{ transaction.Amount }}</td>
+                <td>{{ transaction.Pay_Method }}</td>
             </tr>
             {%  endfor %}
         </table>
